@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.realdealagency.drn" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="admob">
+        <param name="android-package" value="com.admob.cordova.plugin.AdmobAdPlugin" />
+    </feature>
+    <feature name="AdMob">
+        <param name="android-package" value="com.cupertino.cordova.plugin.AdMob" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>drn radio</name>
+    <description>
+    drn radio
+    </description>
+    <author email="ceo@realdealagency.com" href="http://www.realdealagency.com">
+        Real Deal Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/android/icon.png" />
+    <icon density="mdpi" src="res/android/icon.png" />
+    <icon density="hdpi" src="res/android/icon.png" />
+    <icon density="xhdpi" src="res/android/icon.png" />
+    <icon density="xxhdpi" src="res/android/icon.png" />
+    <icon density="xxxhdpi" src="res/android/icon.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-minSdkVersion" value="15" />
+</widget>
