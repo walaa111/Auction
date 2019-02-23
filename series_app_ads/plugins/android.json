@@ -18,10 +18,16 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.realdealagency.drn"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.realdealagency.drn"
     }
   },
   "dependent_plugins": {
     "cordova-admob-sdklibs": {
+      "PACKAGE_NAME": "com.realdealagency.drn"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.realdealagency.drn"
     }
   }
