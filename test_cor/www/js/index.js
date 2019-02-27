@@ -30,8 +30,8 @@ var app = {
         this.receivedEvent('deviceready');
         //lines added inappbrowser
         
-	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=yes,toolbar=yes');
-        inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
+	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
+        inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=yes,toolbar=yes,zoom=no');
     },
 
     // Update DOM on a Received Event
