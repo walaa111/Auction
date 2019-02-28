@@ -42,7 +42,7 @@ var app = {
  navigator.app.exitApp(); 
  alert('exitapp');
    
-    }, false);
+    });
 },
 
     // Update DOM on a Received Event
