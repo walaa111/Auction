@@ -20,6 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        //close app
+               document.addEventListener("backbutton", yourCallbackFunction, false);
     },
 
     // deviceready Event Handler
@@ -34,10 +36,7 @@ var app = {
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
   
 //close app when back button is pressed
-    document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-    navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
-    }, false );
+
 },
 
     // Update DOM on a Received Event
@@ -52,11 +51,10 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-function onConfirmExit(button) {
-    if(button==2){ //If User select a No, then return back;
-        return;
-    }else{
-        navigator.app.exitApp(); // If user select a Yes, quit from the app.
+//close app when back button is pressed
+  function yourCallbackFunction(e) {
+    e.preventDefault();
+ navigator.app.exitApp(); 
+ alert('exitapp');
     }
-}
 app.initialize();
