@@ -42,10 +42,11 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-initAd();
+
+        alert('Received Event: ' + id);
+        initAd();
 showBannerFunc();
 showInterstitialFunc();
-        console.log('Received Event: ' + id);
     }
 };
 //initialize the goodies 
@@ -76,7 +77,7 @@ function initAd(){
  
             registerAdEvents();
         } else {
-            //alert( 'admob plugin not ready' ); 
+            alert( 'admob plugin not ready' ); 
         }
 }
 //functions to allow you to know when ads are shown, etc. 
