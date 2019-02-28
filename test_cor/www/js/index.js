@@ -20,9 +20,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        //admob
-
-
     },
 
     // deviceready Event Handler
@@ -35,9 +32,7 @@ var app = {
         
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
-//admob  
-
-  },
+    },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -47,98 +42,62 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
+initAd();
+showBannerFunc();
+showInterstitialFunc();
         console.log('Received Event: ' + id);
     }
 };
-//ads
-    function initAds() {
-      if (admob) {
-        var adPublisherIds = {
-          ios : {
-            banner : "ca-app-pub-XXXXXXXXXXXXXXXX/BBBBBBBBBB",
-            interstitial : "ca-app-pub-XXXXXXXXXXXXXXXX/IIIIIIIIII"
-          },
-          android : {
-            banner : "ca-app-pub-7251676025279948/5761699976",
-            interstitial : "ca-app-pub-7251676025279948/6256523997"
-          }
-        };
-    	  var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
-            
-        admob.setOptions({
-          publisherId:          admobid.banner,
-          interstitialAdId:     admobid.interstitial,
-          autoShowBanner:       true,
-          autoShowInterstitial: false,
-          autoShowRewarded:     false,
-          tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",
-          tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",
-          tappxShare:           0.5,
-        });
+//initialize the goodies 
+function initAd(){
+        if ( window.plugins && window.plugins.AdMob ) {
+            var ad_units = {
+                ios : {
+                    banner: 'ca-app-pub-xxxxxxxxxxx/xxxxxxxxxxx',		//PUT ADMOB ADCODE HERE 
+                    interstitial: 'ca-app-pub-xxxxxxxxxxx/xxxxxxxxxxx'	//PUT ADMOB ADCODE HERE 
+                },
+                android : {
+                    banner: 'ca-app-pub-7251676025279948/5761699976',		//PUT ADMOB ADCODE HERE 
+                    interstitial: 'ca-app-pub-7251676025279948/6256523997'	//PUT ADMOB ADCODE HERE 
+                }
+            };
+            var admobid = ( /(android)/i.test(navigator.userAgent) ) ? ad_units.android : ad_units.ios;
  
-        registerAdEvents();
-        
-      } else {
-        alert('AdMobAds plugin not ready');
-      }
-    }
-    
-    function onAdLoaded(e) {
-      if (isAppForeground) {
-        if (e.adType === admob.AD_TYPE.AD_TYPE_BANNER) {
-          console.log("New banner received");
-        } else if (e.adType === admob.INTERSTITIAL) {
-          console.log("An interstitial has been loaded and autoshown. If you want to automatically show the interstitial ad, set 'autoShowInterstitial: true' in admob.setOptions() or remove it");
-          admob.showInterstitialAd();
-        } else if (e.adType === admob.AD_TYPE_REWARDED) {
-          console.log("New rewarded ad received");
-          admob.showRewardedAd();
+            window.plugins.AdMob.setOptions( {
+                publisherId: admobid.banner,
+                interstitialAdId: admobid.interstitial,
+                adSize: window.plugins.AdMob.AD_SIZE.SMART_BANNER,	//use SMART_BANNER, BANNER, LARGE_BANNER, IAB_MRECT, IAB_BANNER, IAB_LEADERBOARD 
+                bannerAtTop: true, // set to true, to put banner at top 
+                overlap: true, // banner will overlap webview 
+                offsetTopBar: false, // set to true to avoid ios7 status bar overlap 
+                isTesting: false, // receiving test ad 
+                autoShow: true // auto show interstitial ad when loaded 
+            });
+ 
+            registerAdEvents();
+        } else {
+            //alert( 'admob plugin not ready' ); 
         }
-      }
+}
+//functions to allow you to know when ads are shown, etc. 
+function registerAdEvents() {
+        document.addEventListener('onReceiveAd', function(){});
+        document.addEventListener('onFailedToReceiveAd', function(data){});
+        document.addEventListener('onPresentAd', function(){});
+        document.addEventListener('onDismissAd', function(){ });
+        document.addEventListener('onLeaveToAd', function(){ });
+        document.addEventListener('onReceiveInterstitialAd', function(){ });
+        document.addEventListener('onPresentInterstitialAd', function(){ });
+        document.addEventListener('onDismissInterstitialAd', function(){ });
     }
-    
-    function onPause() {
-      if (isAppForeground) {
-        admob.destroyBannerView();
-        isAppForeground = false;
-      }
-    }
-    
-    function onResume() {
-      if (!isAppForeground) {
-        setTimeout(admob.createBannerView, 1);
-        setTimeout(admob.requestInterstitialAd, 1);
-        isAppForeground = true;
-      }
-    }
-    
-    // optional, in case respond to events
-    function registerAdEvents() {
-      document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
-      document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
-      document.addEventListener(admob.events.onAdOpened, function (e) {});
-      document.addEventListener(admob.events.onAdClosed, function (e) {});
-      document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
-      
-      document.addEventListener("pause", onPause, false);
-      document.addEventListener("resume", onResume, false);
-    }
-        
-    function onDeviceReady() {
-      document.removeEventListener('deviceready', onDeviceReady, false);
-      initAds();
- 
-      // display a banner at startup
-      admob.createBannerView();
-        
-      // request an interstitial ad
-      admob.requestInterstitialAd();
- 
-      // request a rewarded ad
-      admob.requestRewardedAd();
-    }
-    
-    document.addEventListener("deviceready", onDeviceReady, false);
-    /*end ads*/
+ //display the banner 
+function showBannerFunc(){
+    window.plugins.AdMob.createBannerView();
+}
+//display the interstitial 
+function showInterstitialFunc(){
+    window.plugins.AdMob.createInterstitialView();	//get the interstitials ready to be shown and show when it's loaded. 
+    window.plugins.AdMob.requestInterstitialAd();
+}
+
 app.initialize();
