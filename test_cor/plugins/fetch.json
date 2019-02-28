@@ -65,14 +65,12 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-android-play-services-gradle-release": {
+  "com.google.playservices": {
     "source": {
       "type": "registry",
-      "id": "cordova-android-play-services-gradle-release"
+      "id": "com.google.playservices"
     },
     "is_top_level": true,
-    "variables": {
-      "PLAY_SERVICES_VERSION": "11.6.2"
-    }
+    "variables": {}
   }
 }

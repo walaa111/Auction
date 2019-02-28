@@ -93,7 +93,6 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "cordova-plugin-extension/hellocordova-rjfun-libs.gradle"
-apply from: "cordova-android-play-services-gradle-release/hellocordova-cordova-android-play-services-gradle-release.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -255,6 +254,12 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     debugCompile(project(path: "CordovaLib", configuration: "debug"))
     releaseCompile(project(path: "CordovaLib", configuration: "release"))
+    debugCompile(project(path: "com.google.playservices:google-play-services_lib", configuration: "debug")){
+        exclude module:("CordovaLib")
+    }
+    releaseCompile(project(path: "com.google.playservices:google-play-services_lib", configuration: "release")){
+        exclude module:("CordovaLib")
+    }
     compile "com.google.android.gms:play-services-ads:15.0.0"
     compile "com.google.android.gms:play-services-ads:16.0.0"
     // SUB-PROJECT DEPENDENCIES END

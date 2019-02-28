@@ -45,7 +45,7 @@ module.exports.metadata =
   "cordova-admob": "5.1.0",
   "cordova-plugin-extension": "1.5.4",
   "cordova-plugin-admobpro": "2.37.2",
-  "cordova-android-play-services-gradle-release": "2.0.0"
+  "com.google.playservices": "22.0.0"
 };
 // BOTTOM OF METADATA
 });

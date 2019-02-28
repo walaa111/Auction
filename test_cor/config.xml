@@ -37,7 +37,5 @@ Auction Mart
     <plugin name="cordova-plugin-admobpro" spec="^2.37.2">
         <variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
     </plugin>
-    <plugin name="cordova-android-play-services-gradle-release" spec="^2.0.0">
-        <variable name="PLAY_SERVICES_VERSION" value="11.6.2" />
-    </plugin>
+    <plugin name="com.google.playservices" spec="^22.0.0" />
 </widget>

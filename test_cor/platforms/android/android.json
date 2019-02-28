@@ -37,6 +37,10 @@
             {
               "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
               "count": 2
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+              "count": 1
             }
           ],
           "/*": [
@@ -76,8 +80,7 @@
       "PLAY_SERVICES_VERSION": "16.0.0",
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-android-play-services-gradle-release": {
-      "PLAY_SERVICES_VERSION": "11.6.2",
+    "com.google.playservices": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
@@ -126,6 +129,6 @@
     "cordova-admob": "5.1.0",
     "cordova-plugin-extension": "1.5.4",
     "cordova-plugin-admobpro": "2.37.2",
-    "cordova-android-play-services-gradle-release": "2.0.0"
+    "com.google.playservices": "22.0.0"
   }
 }

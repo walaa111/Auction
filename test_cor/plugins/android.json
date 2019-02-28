@@ -20,8 +20,7 @@
       "PLAY_SERVICES_VERSION": "16.0.0",
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-android-play-services-gradle-release": {
-      "PLAY_SERVICES_VERSION": "11.6.2",
+    "com.google.playservices": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
