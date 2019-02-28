@@ -15,6 +15,10 @@
     },
     "cordova-admob": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-admobpro": {
+      "PLAY_SERVICES_VERSION": "16.0.0",
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {
@@ -22,6 +26,9 @@
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-play-services-version-adapter": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-extension": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }

@@ -23,6 +23,10 @@
             {
               "xml": "<feature name=\"AdMobAds\"><param name=\"android-package\" value=\"com.appfeel.cordova.admob.AdMobAds\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -32,17 +36,17 @@
           "/manifest/application": [
             {
               "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
-              "count": 1
+              "count": 2
             }
           ],
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-              "count": 2
+              "count": 3
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 2
+              "count": 3
             }
           ]
         }
@@ -63,6 +67,13 @@
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-admob": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-extension": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-admobpro": {
+      "PLAY_SERVICES_VERSION": "16.0.0",
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
@@ -93,6 +104,14 @@
         "window.admob",
         "window.tappx"
       ]
+    },
+    {
+      "id": "cordova-plugin-admobpro.AdMob",
+      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+      "pluginId": "cordova-plugin-admobpro",
+      "clobbers": [
+        "window.AdMob"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -100,6 +119,8 @@
     "cordova-plugin-inappbrowser": "3.0.0",
     "cordova-connectivity-monitor": "1.2.2",
     "cordova-play-services-version-adapter": "1.0.2",
-    "cordova-admob": "5.1.0"
+    "cordova-admob": "5.1.0",
+    "cordova-plugin-extension": "1.5.4",
+    "cordova-plugin-admobpro": "2.37.2"
   }
 }

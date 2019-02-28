@@ -46,5 +46,33 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+// select the right Ad Id according to platform
+  var admobid = {};
+  if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
+    admobid = {
+      banner: 'ca-app-pub-7251676025279948/5761699976', // or DFP format "/6253334/dfp_example_ad"
+      interstitial: 'ca-app-pub-7251676025279948/6256523997'
+    };
+  } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+    admobid = {
+      banner: 'ca-app-pub-7251676025279948/5761699976', // or DFP format "/6253334/dfp_example_ad"
+      interstitial: 'ca-app-pub-7251676025279948/6256523997'
+    };
+  } else { // for windows phone
+    admobid = {
+      banner: 'ca-app-pub-7251676025279948/5761699976', // or DFP format "/6253334/dfp_example_ad"
+      interstitial: 'ca-app-pub-7251676025279948/6256523997'
+    };
+  }
+  // it will display smart banner at top center, using the default options
+if(AdMob) AdMob.createBanner({
+  adId: admobid.banner,
+  position: AdMob.AD_POSITION.TOP_CENTER,
+  autoShow: true });
+  // preppare and load ad resource in background, e.g. at begining of game level
+if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+ 
+// show the interstitial later, e.g. at end of game level
+if(AdMob) AdMob.showInterstitial();
 
 app.initialize();

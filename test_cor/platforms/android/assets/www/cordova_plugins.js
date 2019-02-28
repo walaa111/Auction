@@ -25,6 +25,14 @@ module.exports = [
       "window.admob",
       "window.tappx"
     ]
+  },
+  {
+    "id": "cordova-plugin-admobpro.AdMob",
+    "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+    "pluginId": "cordova-plugin-admobpro",
+    "clobbers": [
+      "window.AdMob"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -34,7 +42,9 @@ module.exports.metadata =
   "cordova-plugin-inappbrowser": "3.0.0",
   "cordova-connectivity-monitor": "1.2.2",
   "cordova-play-services-version-adapter": "1.0.2",
-  "cordova-admob": "5.1.0"
+  "cordova-admob": "5.1.0",
+  "cordova-plugin-extension": "1.5.4",
+  "cordova-plugin-admobpro": "2.37.2"
 };
 // BOTTOM OF METADATA
 });
