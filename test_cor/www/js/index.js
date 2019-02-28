@@ -32,7 +32,18 @@ var app = {
         
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
-    },
+  
+//close app when back button is pressed
+    document.addEventListener("backbutton", function(e){
+       if($.mobile.activePage.is('#homepage')){
+           e.preventDefault();
+           navigator.app.exitApp();
+       }
+       else {
+           navigator.app.backHistory();
+       }
+    }, false);
+},
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
