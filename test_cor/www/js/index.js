@@ -21,7 +21,7 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         //close app
-               document.addEventListener("backbutton", yourCallbackFunction, false);
+               document.addEventListener("backbutton", false);
     },
 
     // deviceready Event Handler
@@ -34,8 +34,6 @@ var app = {
         
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
-  
-//close app when back button is pressed
 
 },
 
@@ -49,6 +47,9 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+          
+//close app when back button is pressed
+yourCallbackFunction();
     }
 };
 //close app when back button is pressed
