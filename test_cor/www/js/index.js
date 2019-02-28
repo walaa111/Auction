@@ -20,8 +20,10 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        //close app
-               document.addEventListener("backbutton", yourCallbackFunction, false);
+        //admob
+
+        	admob.initAdmob("ca-app-pub-7251676025279948/5761699976","ca-app-pub-7251676025279948/6256523997");
+	admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
     },
 
     // deviceready Event Handler
@@ -34,10 +36,7 @@ var app = {
         
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
-  
-//close app when back button is pressed
-
-},
+    },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -51,13 +50,5 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-//close app when back button is pressed
-  function yourCallbackFunction(e) {
-     
-    e.preventDefault();
-     /*
- navigator.app.exitApp(); 
- */
- alert('exitapp');
-    }
+
 app.initialize();
