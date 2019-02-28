@@ -13,15 +13,12 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-admob": {
+    "cordova-plugin-admob-simple": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {
-    "cordova-connectivity-monitor": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-play-services-version-adapter": {
+    "cordova-admob-sdklibs": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }

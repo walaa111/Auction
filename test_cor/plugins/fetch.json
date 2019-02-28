@@ -23,14 +23,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-admob": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-admob"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-connectivity-monitor": {
     "source": {
       "type": "registry",
@@ -45,6 +37,14 @@
       "id": "cordova-play-services-version-adapter"
     },
     "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-admob-simple": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-simple"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }

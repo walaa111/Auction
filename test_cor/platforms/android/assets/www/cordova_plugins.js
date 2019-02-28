@@ -10,20 +10,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-connectivity-monitor.connectivity",
-    "file": "plugins/cordova-connectivity-monitor/www/connectivity.js",
-    "pluginId": "cordova-connectivity-monitor",
+    "id": "cordova-plugin-admob-simple.AdMob",
+    "file": "plugins/cordova-plugin-admob-simple/www/AdMob.js",
+    "pluginId": "cordova-plugin-admob-simple",
     "clobbers": [
-      "window.connectivity"
-    ]
-  },
-  {
-    "id": "cordova-admob.AdMobAds",
-    "file": "plugins/cordova-admob/www/admob.js",
-    "pluginId": "cordova-admob",
-    "clobbers": [
-      "window.admob",
-      "window.tappx"
+      "window.plugins.AdMob"
     ]
   }
 ];
@@ -32,9 +23,8 @@ module.exports.metadata =
 {
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-inappbrowser": "3.0.0",
-  "cordova-connectivity-monitor": "1.2.2",
-  "cordova-play-services-version-adapter": "1.0.2",
-  "cordova-admob": "5.1.0"
+  "cordova-admob-sdklibs": "2.1.6",
+  "cordova-plugin-admob-simple": "3.3.8"
 };
 // BOTTOM OF METADATA
 });
