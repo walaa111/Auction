@@ -53,8 +53,9 @@ var app = {
 };
 //close app when back button is pressed
   function yourCallbackFunction(e) {
-      /*
+     
     e.preventDefault();
+     /*
  navigator.app.exitApp(); 
  */
  alert('exitapp');
