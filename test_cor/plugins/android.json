@@ -12,14 +12,7 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-admob-simple": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
-  "dependent_plugins": {
-    "cordova-admob-sdklibs": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    }
-  }
+  "dependent_plugins": {}
 }
