@@ -39,38 +39,12 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-admob": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-admob"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-admobpro": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-admobpro"
-    },
-    "is_top_level": true,
-    "variables": {
-      "PLAY_SERVICES_VERSION": "16.0.0"
-    }
-  },
   "cordova-plugin-extension": {
     "source": {
       "type": "registry",
       "id": "cordova-plugin-extension"
     },
     "is_top_level": false,
-    "variables": {}
-  },
-  "com.google.playservices": {
-    "source": {
-      "type": "registry",
-      "id": "com.google.playservices"
-    },
-    "is_top_level": true,
     "variables": {}
   }
 }

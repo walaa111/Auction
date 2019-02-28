@@ -12,27 +12,7 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-admob": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-admobpro": {
-      "PLAY_SERVICES_VERSION": "16.0.0",
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "com.google.playservices": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
-  "dependent_plugins": {
-    "cordova-connectivity-monitor": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-play-services-version-adapter": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    }
-  }
+  "dependent_plugins": {}
 }
