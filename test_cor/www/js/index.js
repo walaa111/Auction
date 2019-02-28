@@ -21,7 +21,7 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         //close app
-          
+               document.addEventListener("backbutton", yourCallbackFunction, false);
     },
 
     // deviceready Event Handler
@@ -36,13 +36,7 @@ var app = {
         inAppBrowserbRef = cordova.InAppBrowser.open('http://matthew.realdeal.com.eg/MazadMart/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
   
 //close app when back button is pressed
-    document.addEventListener("backbutton", function(e){
 
-    e.preventDefault();
- navigator.app.exitApp(); 
- alert('exitapp');
-   
-    });
 },
 
     // Update DOM on a Received Event
@@ -58,5 +52,11 @@ var app = {
     }
 };
 //close app when back button is pressed
-
+  function yourCallbackFunction(e) {
+      /*
+    e.preventDefault();
+ navigator.app.exitApp(); 
+ */
+ alert('exitapp');
+    }
 app.initialize();
