@@ -57,8 +57,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        callMeToShowBanners();
-callMeToShowinter();
+
     }
 };
 //admob
@@ -76,7 +75,7 @@ admob.createBannerView({
 });
 
 admob.requestInterstitialAd({
-  publisherId:          "ca-app-pub-7251676025279948/5761699976",
+  publisherId:          "ca-app-pub-7251676025279948",
   interstitialAdId:     "ca-app-pub-7251676025279948/6256523997",
   autoShowInterstitial: true
 });
