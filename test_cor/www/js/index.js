@@ -31,7 +31,7 @@ var app = {
         //lines added inappbrowser
         
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
-        inAppBrowserbRef = cordova.InAppBrowser.open('https://mazadmart.com/live-auctions/?theme-switch=mazadmart', '_self', 'location=no,toolbar=no,zoom=no');
+        inAppBrowserbRef = cordova.InAppBrowser.open('http://sherif.realdeal.com.eg/mazadmart/?theme-switch=mazadmart_app', '_self', 'location=no,toolbar=no,zoom=no');
     },
 
     // Update DOM on a Received Event
